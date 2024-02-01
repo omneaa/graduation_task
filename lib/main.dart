@@ -6,14 +6,12 @@ import 'package:screen/screens/ChangePasswordScreen.dart';
 import 'package:screen/screens/LogInScreen.dart';
 import 'package:screen/screens/deleteAccount.dart';
 import 'package:screen/screens/logout.dart';
-
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: ProfileScreen(),
   ));
 }
-
 class ProfileScreen extends StatefulWidget {
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -40,20 +38,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Text('Profile'),
           ],
         ),
+        backgroundColor: Color(0xFF6FA1A2),
         centerTitle: true,
       ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 1.0),
+              //SizedBox(height: 1.0),
               CircleAvatar(
                 radius: 70,
-                backgroundImage: _imageFile != null ? FileImage(File(_imageFile!.path)) : null,
+                backgroundImage:AssetImage('assets/images/profilePicture.png'),
+                // _imageFile != null ? FileImage(File(_imageFile!.path)) : null,
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: CircleAvatar(
-                    backgroundColor: Colors.white,
+
+                    backgroundColor: Color(0xFFF3F4F9),
                     radius: 12,
                     child: IconButton(
                       icon: Icon(Icons.camera_alt, size: 25, color: Colors.grey),
@@ -62,8 +63,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
+
+
+
               SizedBox(height: 20.0),
-              Text('omnia Mohamed',style: TextStyle(fontSize: 20),),
+              Text('Edit Profile',style: TextStyle(fontSize: 20),),
               SizedBox(height: 20.0),
               SizedBox(
                 width: 250,
@@ -76,6 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
               SizedBox(
                 width: 250,
                 height: 70,
@@ -90,32 +95,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               SizedBox(height: 20.0),
               Container(
-                width: 150,
+                width: 200,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => LogInScreen()));
                     },
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF6FA1A2), // Set the desired color
+                    ),
                     child: Text('Logout')
                 ),
               ),
               SizedBox(height: 20.0),
               Container(
-                width: 150,
+                width: 200,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => DeleteAccountScreen()));
                   },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF6FA1A2), // Set the desired color
+                  ),
                   child: Text('Delete Account'),
                 ),
               ),
 
               SizedBox(height: 20.0),
               Container(
-                width: 150,
+                width: 200,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePasswordScreen()));
                   },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF6FA1A2), // Set the desired color
+                  ),
                   child: Text('Change password'),
                 ),
               ),

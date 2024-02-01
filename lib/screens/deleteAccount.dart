@@ -16,18 +16,18 @@ class DeleteAccountScreen extends StatelessWidget {
 
           ],
         ),
+        backgroundColor: Color(0xFF6FA1A2),
 
         centerTitle: true,
       ),
 
       body: Center(
-
         child: Container(
-          width: 380.0,
-          height: 600.0,
+          width: 350.0,
+          height: 500.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.blueAccent,
+            color: Color(0xFF6FA1A2),
 
 
           ),
@@ -46,10 +46,10 @@ class DeleteAccountScreen extends StatelessWidget {
 
 
                 Icon(Icons.delete_rounded,color: Colors.red,size: 60),
-                SizedBox(height: 150.0),
+                SizedBox(height: 100.0),
                   Text(
                     'You Are About To Delete Your Account',
-                    style: TextStyle(fontSize: 21,color: Colors.white),
+                    style: TextStyle(fontSize: 15,color: Colors.white),
                   ),
 
                   //Icon(Icons.delete, color: Colors.red),
@@ -58,7 +58,7 @@ class DeleteAccountScreen extends StatelessWidget {
                 SizedBox(height: 20.0),
                 Text(
                   'Are you sure?',
-                  style: TextStyle(fontSize: 23,color: Colors.white70),
+                  style: TextStyle(fontSize: 20,color: Colors.white70),
                 ),
                 SizedBox(height: 80.0),
                 Row(
@@ -67,17 +67,21 @@ class DeleteAccountScreen extends StatelessWidget {
                     SizedBox(width: 100.0),
 
                     ElevatedButton(
-                      child: Text('Cancel',style: TextStyle(color: Colors.white,fontSize: 20)),
+                      child: Text('Cancel',style: TextStyle(color: Colors.white,fontSize: 16)),
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => ProfileScreen()),
                         );
                       },
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xFF6FA1A2), // Set the desired color
+                      ),
+
                     ),
                     SizedBox(width: 40.0),
                     ElevatedButton(
-                      child: Text('Delete', style: TextStyle(color: Colors.white,fontSize: 20)),
+                      child: Text('Delete', style: TextStyle(color: Colors.white,fontSize: 16)),
 
                       onPressed: () {
                         Navigator.push(
@@ -85,6 +89,9 @@ class DeleteAccountScreen extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => SignUpScreen()),
                         );
                       },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red, // Set the desired color
+                      ),
                     ),
                   ],
                 ),
